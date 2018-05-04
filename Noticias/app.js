@@ -1,29 +1,17 @@
-//Seção 3, aula 13
-
-//USANDO EXPRESS
-var express = require('express');
-var msg = require('./moduloteste');
-
-var app = express();
-
-//Seção 3, aula 14
-//USANDO EJS
-app.set('view engine', 'ejs');
-
-app.get('/formulario_inclusao_noticias', function(req, resp){
-    resp.render("admin/form_add_noticia");
-});
-
-app.get('/noticias', function(req, resp){
-    resp.render("noticias/noticias");
-});
-
-app.get('/', function(req, resp){
-    resp.render("home/index");
-});
 
 
+var app = require("./config/server"); //Chama a configuração do server que encontra-se em na pasta config
+
+var rotaHome = require("./app/routes/home.js"); //Pode ser assim, 
+rotaHome(app); /// ou de forma simplificada
+
+
+var rotaFormNoticias = require("./app/routes/formulario_inclusao_noticia.js")(app); //forma simplificada, assim
+
+
+var rotaNoticias = require("./app/routes/noticias.js");
+rotaNoticias(app);
 
 app.listen(3000, function(){
-    console.log(msg());
+    console.log("Servidor Ativo!");
 });
