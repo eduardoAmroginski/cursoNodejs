@@ -2,11 +2,28 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Notícias</title>
+			<title>Notï¿½cias</title>
 		</head>
 	<body>
 
-		<h1>Notícias</h1>
+		<h1>Notï¿½cias</h1>
+
+		<table>
+
+			<tr>
+				<td>ID</td>
+				<td>Titulo</td>
+				<td>Noticia</td>
+			</tr>
+			<%for(var i=0; i<noticias.length; i++) { %> <!--Usa-se JavaScript para imprimir o conteudo na tela de forma dinamica atravez do banco de dados -->
+			<tr>
+				<td><%= noticias[i].id_noticias%></td>
+				<td><%= noticias[i].titulo%></td>
+				<td><%= noticias[i].noticias%></td>
+			</tr>
+			<% } %>
+		</table>
+
 
 	</body>
 </html>
