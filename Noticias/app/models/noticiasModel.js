@@ -7,7 +7,12 @@ module.exports = function(){
 
 
     this.getNoticia = function(connectionBD, callback){
-        connectionBD.query('select *from noticias where id_noticia = 2', callback);
+        connectionBD.query('select *from noticias where id_noticias = 2', callback);
+    }
+
+
+    this.salvarNoticia = function(noticia, connectionBD, callback){
+        connectionBD.query('INSERT INTO noticias set ? ', noticia, callback);
     }
 
     return this;

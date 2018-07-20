@@ -10,7 +10,7 @@ module.exports = function(application){
 
 
         noticiasModel.getNoticia(connectionBD, function(err, result){
-                    resp.render("noticias/noticia",{noticia : result}); //Faz a renderização dos dados atraves da view noticias.ejs
+                    resp.render("noticias/noticias",{noticia : result}); //Faz a renderização dos dados atraves da view noticias.ejs
                 });
     });
 
