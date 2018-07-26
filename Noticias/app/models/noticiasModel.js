@@ -7,7 +7,7 @@ module.exports = function(){
 
 
     this.getNoticia = function(connectionBD, callback){
-        connectionBD.query('select *from noticias where id_noticias = 2', callback);
+        connectionBD.query('select *from noticias', callback);
     }
 
 

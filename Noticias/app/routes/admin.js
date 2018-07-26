@@ -8,16 +8,17 @@ module.exports = function(application){ //exporta a função que direciona o req
 
 
     application.post('/noticias/salvar', function(req, resp){ //rota para salvar formulario
-        var noticia = req.body;
+        var noticias = req.body;
 
         //conexão
         var connection = application.config.dbConnection();
+
         //model
         var noticiasModel = application.app.models.noticiasModel;
 
         //salvarNoticia
-        noticiasModel.salvarNoticia(noticia, connection, function(error, result){
-            resp.render("./noticias/noticia", {noticias : result});
+        noticiasModel.salvarNoticia(noticias, connection, function(error, result){//espera um JSON
+            resp.redirect("/noticias"); //redireciona para a pagina noticias
         });
 
     });
