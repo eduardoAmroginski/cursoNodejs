@@ -1,8 +1,8 @@
 
-module.exports = function(app){ //exporta a função que direciona o requerimento da home
+module.exports = function(application){ //exporta a função que direciona o requerimento da home
 
-    app.get('/', function(req, resp){
-        resp.render("home/index"); 
+    application.get('/', function(req, resp){
+        application.app.controllers.home.index(application, req, resp);
     });
 
 }

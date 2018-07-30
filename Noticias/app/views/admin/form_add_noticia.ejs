@@ -9,36 +9,36 @@
 		<h1>Adicionar notícia</h1>
 		<br />
 
-		<% if(validacao){ %>
-			<ul>
-				<% for(var i = 0; i<validacao.length; i++){ %>
-					<li>
-						<%= validacao[i].msg %>
-					</li>
-				<% } %>
-			</ul>
-		<% } %>
+			<% if(validacao) { %>
+				<ul>
+					<% for(var i = 0; i<validacao.length; i++){ %>
+						<li>
+							<%= validacao[i].msg %>
+						</li>
+					<% } %>
+				</ul>
+			<% } %>
 
 		<form action="/noticias/salvar" method="POST">
 
 			<label>Titulo</label>
-			<input type="text" id="titulo" name="titulo" placeholder="Título da noticia"/>
+			<input type="text" id="titulo" name="titulo" value="<%=noticia.titulo%>" placeholder="Título da noticia"/>
 			<br />
 
 			<label>Resumo</label>
-			<input type="text" id="resumo" name="resumo" placeholder="Resumo da noticia"/>
+			<input type="text" id="resumo" name="resumo" value="<%=noticia.resumo%>" placeholder="Resumo da noticia"/>
 			<br />
 
 			<label>Nome Autor</label>
-			<input type="text" id="autor" name="autor" placeholder="Autor da noticia"/>
+			<input type="text" id="autor" name="autor" value="<%=noticia.autor%>" placeholder="Autor da noticia"/>
 			<br />
 
 			<label>Data dos fatos</label>
-			<input type="date" id="dataNoticia" name="dataNoticia" placeholder="Data da noticia"/>
+			<input type="date" id="dataNoticia" name="dataNoticia" value="<%=noticia.dataNoticia%>" placeholder="Data da noticia"/>
 			<br />
 
 			<label>Noticia</label>
-			<textarea id="noticia" name="noticia" rows="5" cols="30"></textarea>
+			<textarea id="noticia" name="noticia" rows="5" cols="30"><%=noticia.noticia%></textarea> <!--Como o campo Noticias é uma textarea, deve-se por o comando de mostrar a noticia dentro da tag-->
 			<br />
 
 			<input type="submit" value="Enviar" />

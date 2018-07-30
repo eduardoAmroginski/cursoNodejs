@@ -7,14 +7,15 @@ module.exports = function(application){
     
     application.get('/noticias', function(req, resp){
 
-        var connectionBD = application.config.dbConnection(); //Atribui a chamada do dbConnection ao ConectionBD, fazendo a conexão do banco de dados
-        var noticiasModel = new application.app.models.NoticiasDAO(connectionBD);
-
-        noticiasModel.getNoticias(function(err, result){
-            resp.render("noticias/noticias",{noticias : result}); //Faz a renderização dos dados atraves da view noticias.ejs
-        });
+       application.app.controllers.noticias.noticias(application, req, resp);
 
     });
 
+
+    application.get('/noticia', function(req, resp){
+        
+        application.app.controllers.noticias.noticia(application, req, resp);
+
+    });
 
 };

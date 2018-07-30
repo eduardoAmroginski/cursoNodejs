@@ -23,6 +23,7 @@ consign()
 .include('./app/routes')
 .then('config/dbConnection.js') //AQUI DEVE-SE APONTAR A EXTENSÃO PARA NÃO CONFUNDIR O CONSIGN
 .then('app/models')
+.then('app/controllers')
 .into(app);
 
 
