@@ -7,12 +7,14 @@ var consign = require('consign');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
+
 var app = express();
 
 //USANDO EJS
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
+app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true})); //middleware BodyParser
 app.use(expressValidator());
 
