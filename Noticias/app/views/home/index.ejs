@@ -70,44 +70,22 @@
 		    	</div>
 	    	</div>
 
+			
 	    	<div class="row">
-	    		<div class="col-md-4">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor"><%= noticias[2].autor %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[2].titulo %></a>
-		    			<span class="noticia_data"><%= noticias[2].dataNoticia %></span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				<%= noticias[2].resumo %>
-		    			</p>
-		    		</div>
-		    	</div>
+				<% for(var i = 2; i<noticias.length; i++){ %> <!--USANDO PARA RENDERIZAR DINAMICAMENTE NA PAGINA-->
+					<div class="col-md-4">
+						<div class="noticia_wrapper">
+							<span class="noticia_autor"><%= noticias[i].autor %></span>
+							<a href="noticia.html" class="noticia_titulo"><%= noticias[i].titulo %></a>
+							<span class="noticia_data"><%= noticias[i].dataNoticia %></span>
+							<br />
+							<p class="noticia_resumo">
+								<%= noticias[i].resumo %>
+							</p>
+						</div>
+					</div>
 
-	    		<div class="col-md-4">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor"><%= noticias[3].autor %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[3].titulo %></a>
-		    			<span class="noticia_data"><%= noticias[3].dataNoticia %></span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				<%= noticias[3].resumo %>
-		    			</p>
-		    		</div>
-		    	</div>
-
-	    		<div class="col-md-4">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor"><%= noticias[4].autor %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[4].titulo %></a>
-		    			<span class="noticia_data"><%= noticias[4].dataNoticia %></span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				<%= noticias[4].resumo %>
-		    			</p>
-		    		</div>
-		    	</div>
+					<% } %>
 	    	</div>
 
 	    	<div class="row ver_mais">

@@ -23,7 +23,7 @@ module.exports.noticias_salvar = function(application, req, resp){
     console.log(erros);
 
     if(erros){
-        console.log(erros);
+        
         resp.render("admin/form_add_noticia", {validacao : erros, noticia: noticias});
         return;
     }
