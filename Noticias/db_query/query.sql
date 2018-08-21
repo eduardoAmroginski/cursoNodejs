@@ -15,9 +15,9 @@ insert into noticias(titulo, noticia)values('TESTE NOTICIA 2', 'conteudo da noti
 select *from noticias;
 
 
-alter table noticias CHANGE data_noticia dataNoticia text
+alter table noticias CHANGE noticias noticia text
 
 
 alter table noticias add column resumo varchar(100);
 alter table noticias add column autor varchar(30);
-alter table noticias add column data_noticia date;
+alter table noticias add column dataNoticia date;
